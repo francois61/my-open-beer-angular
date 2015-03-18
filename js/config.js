@@ -24,6 +24,20 @@ module.exports=function($routeProvider,$locationProvider,$httpProvider) {
 	}).when('/config', {
 		templateUrl: 'templates/config.html',
 		controller: 'ConfigController'
+		
+	}).when('/beers', {
+		templateUrl: 'templates/beers/main.html',
+		controller: 'BeersController'	
+	}).when('/beers/refresh', {
+		templateUrl: 'templates/beers/main.html',
+		controller: 'BeersController'
+	}).when('beers/new'{
+		templateUrl: 'templates/beers/beersForm.html',
+		controller: 'BeersAddController'
+	}).when('/breweries/update', {
+		templateUrl: 'templates/breweries/breweryForm.html',
+		controller: 'BreweryUpdateController'
+		
 	}).otherwise({
 		redirectTo: '/'
 	});
