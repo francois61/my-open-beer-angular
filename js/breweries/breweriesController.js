@@ -86,6 +86,14 @@ module.exports=function($scope,rest,$timeout,$location,config,$route,save) {
 		config.activeBrewery.reference=$scope.activeBrewery;
 		$location.path("breweries/update");
 	}
+
+	$scope.see=function(brewery){
+		if(angular.isDefined(brewery))
+			$scope.activeBrewery=brewery;
+		config.activeBrewery=angular.copy($scope.activeBrewery);
+		config.activeBrewery.reference=$scope.activeBrewery;
+		$location.path("breweries/update");
+	}
 	
 	$scope.update=function(brewery,force,callback){
 		if(angular.isUndefined(brewery)){

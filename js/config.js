@@ -31,14 +31,18 @@ module.exports=function($routeProvider,$locationProvider,$httpProvider) {
 	}).when('/beers/refresh', {
 		templateUrl: 'templates/beers/main.html',
 		controller: 'BeersController'
-	}).when('beers/new'{
+	}).when('beers/new',{
 		templateUrl: 'templates/beers/beersForm.html',
 		controller: 'BeersAddController'
 	}).when('/breweries/update', {
 		templateUrl: 'templates/breweries/breweryForm.html',
 		controller: 'BreweryUpdateController'
 		
-	}).otherwise({
+	}).when('/breweries/detail', {
+			templateUrl: 'templates/breweries/breweryDetail.html',
+			controller: 'BreweryDetailController'
+
+		}).otherwise({
 		redirectTo: '/'
 	});
 	if(window.history && window.history.pushState){

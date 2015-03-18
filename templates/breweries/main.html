@@ -16,6 +16,9 @@
 	<div class="btn-group" role="group" aria-label="Modifier">
 		<a class="btn btn-default" data-ng-show="showUpdate()" data-ng-click="edit()">Modifier</a>
 	</div>
+	<div class="btn-group" role="group" aria-label="Voir la brasserie">
+		<a class="btn btn-default" data-ng-show="showUpdate()" data-ng-click="see()">Voir la brasserie</a>
+	</div>
 	<div class="btn-group" role="group" aria-label="Supprimer">
 		<a class="btn btn-default" data-ng-show="countSelected()>0" data-ng-click="remove()"><data-ng-pluralize count="countSelected()" when="{1: 'Supprimer la brasserie','other':'Supprimer les brasseries ({})'}"></span></a>
 	</div>
