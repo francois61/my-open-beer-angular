@@ -8,7 +8,7 @@
 		<input class="form-control" type="text" placeholder="Filtrer..." data-ng-model="q">
 	</div>
 	<div class="btn-group" role="group" aria-label="opération">
-		<a href="breweries/new" class="btn btn-warning">Ajouter...</a>
+		<a href="beers/new" class="btn btn-warning">Ajouter...</a>
 	</div>
 	<div class="btn-group" role="group" aria-label="opération" data-ng-show="defferedUpdate()">
 		<a class="btn btn-default" data-ng-class="{'active': mustHideDeleted}" data-ng-click="hideDeleted()">Masquer les suppressions</a>
@@ -20,7 +20,7 @@
 		<a class="btn btn-default" data-ng-show="countSelected()>0" data-ng-click="remove()"><data-ng-pluralize count="countSelected()" when="{1: 'Supprimer la brasserie','other':'Supprimer les brasseries ({})'}"></span></a>
 	</div>
 	<div class="btn-group" role="group" aria-label="count">
-		<div class="btn"><data-ng-pluralize count="results.length" when="{0: 'no brewery',1: 'One brewery','other':'{} breweries'}"></data-ng-pluralize></div>
+		<div class="btn"><data-ng-pluralize count="results.length" when="{0: 'no beer',1: 'One beer','other':'{} beers'}"></data-ng-pluralize></div>
 	</div>
 	<div class="btn-group" role="group" aria-label="false" data-ng-show="data.load">
 		<img class="btn" src="img/loader.gif">
@@ -45,13 +45,13 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr data-ng-repeat="brewery in data.breweries | NotDeletedFilter | orderBy:sortBy.field : sortBy.asc | filter:q as results track by $index" data-ng-dblclick="edit(brewery)" data-ng-click="setActive(brewery)" data-ng-class="{'active': isActive(brewery)}">
-			<td><input type="checkbox" title="Sélectionner" data-ng-model="brewery.selected" data-ng-click="$event.stopPropagation()"></td>
-			<td>{{brewery.id}}</td><td>{{brewery.name}}
-				<span class="label" data-ng-class="{'label-success':brewery.flag=='New','label-warning':brewery.flag=='Updated','label-danger':brewery.flag=='Deleted'}" data-ng-show="brewery.flag">{{brewery.flag}}</span></td>
-			<td>{{brewery.url}}</td>
-			<td>{{brewery.created_at | date:'dd/MM/yy HH:mm:ss'}}</td>
-			<td>{{brewery.updated_at | date:'dd/MM/yy HH:mm:ss'}}</td>
+		<tr data-ng-repeat="beer in data.beers | NotDeletedFilter | orderBy:sortBy.field : sortBy.asc | filter:q as results track by $index" data-ng-dblclick="edit(beer)" data-ng-click="setActive(beer)" data-ng-class="{'active': isActive(beer)}">
+			<td><input type="checkbox" title="Sélectionner" data-ng-model="beer.selected" data-ng-click="$event.stopPropagation()"></td>
+			<td>{{beer.id}}</td><td>{{beer.name}}
+				<span class="label" data-ng-class="{'label-success':beer.flag=='New','label-warning':beer.flag=='Updated','label-danger':beer.flag=='Deleted'}" data-ng-show="beer.flag">{{beer.flag}}</span></td>
+			<td>{{beer.url}}</td>
+			<td>{{beer.created_at | date:'dd/MM/yy HH:mm:ss'}}</td>
+			<td>{{beer.updated_at | date:'dd/MM/yy HH:mm:ss'}}</td>
 		</tr>
 	</tbody>
 </table>
