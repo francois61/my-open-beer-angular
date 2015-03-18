@@ -31,7 +31,7 @@ module.exports=function($routeProvider,$locationProvider,$httpProvider) {
 	}).when('/beers/refresh', {
 		templateUrl: 'templates/beers/main.html',
 		controller: 'BeersController'
-	}).when('beers/new'{
+	}).when('/beers/new',{
 		templateUrl: 'templates/beers/beersForm.html',
 		controller: 'BeersAddController'
 	}).when('/breweries/update', {
