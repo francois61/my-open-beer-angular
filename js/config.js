@@ -27,15 +27,14 @@ module.exports=function($routeProvider,$locationProvider,$httpProvider) {
 		
 	}).when('/beers', {
 		templateUrl: 'templates/beers/main.html',
-		controller: 'BeersController'	
+		controller: 'BeersController'
+	}).when('/beers/detail', {
+		templateUrl: 'templates/beers/beerDetail.html',
+		controller: 'BeersDetailController'
 	}).when('/beers/refresh', {
 		templateUrl: 'templates/beers/main.html',
 		controller: 'BeersController'
-<<<<<<< HEAD
-	}).when('beers/new',{
-=======
 	}).when('/beers/new',{
->>>>>>> origin/master
 		templateUrl: 'templates/beers/beersForm.html',
 		controller: 'BeersAddController'
 	}).when('/breweries/update', {
