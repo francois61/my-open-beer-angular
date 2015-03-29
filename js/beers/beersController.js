@@ -58,6 +58,10 @@ module.exports=function($scope,rest,$timeout,$location,config,$route,save) {
 		return true;
 	}
 	
+	$scope.showDetails=function() {
+        return angular.isDefined($scope.activeBeer);
+    };
+	
 	$scope.countSelected=function(){
 		var result=0;
 		angular.forEach($scope.data.beers, function(value, key) {
@@ -123,4 +127,14 @@ module.exports=function($scope,rest,$timeout,$location,config,$route,save) {
 			beer.deleted=$scope.hideDeleted;
 		}
 	}
+	
+	$scope.details=function(Beer){
+        if(angular.isDefined(Beer)){
+		$scope.activeBeer=Beer;}
+        config.activeBeer=angular.copy($scope.activeBeer);
+        config.activeBeer.reference=$scope.activeBeer;
+        $location.path("beers/details");
+    };
+	
+	
 };
