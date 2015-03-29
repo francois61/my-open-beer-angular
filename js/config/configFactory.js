@@ -5,6 +5,7 @@ module.exports=function() {
 	factory.breweries.refresh="all";//all|ask
 	factory.breweries.update="immediate";//deffered|immediate
 	
+	factory.activeBeer=undefined;
 	factory.beers.loaded=false;
 	factory.beers.refresh="all";//all|ask
 	factory.beers.update="immediate";//deffered|immediate
